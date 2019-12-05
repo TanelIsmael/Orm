@@ -1,5 +1,4 @@
-import {Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable} from "typeorm";
-import {Category} from "./Category";
+import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
 
 @Entity()
 export class Post {
@@ -13,8 +12,7 @@ export class Post {
     @Column("text")
     text = "";
 
-    @ManyToMany(type => Category, { cascade: true })
-    @JoinTable()
-    categories = undefined;
+    @Column("text")
+    name = "";
 
 }
